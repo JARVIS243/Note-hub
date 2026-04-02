@@ -5,96 +5,101 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CAS MVK FYUGP Notes Hub</title>
  <style>
-/* GOOGLE FONT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
 
-/* BASE STYLES */
+/* BASE BODY */
 body {
   font-family: 'Inter', sans-serif;
+  background: #f4f5f7;
   margin: 0;
-  padding: 20px;
-  background-color: #f5f6fa;
-  color: #333;
+  padding: 30px;
+  color: #1e1e2f;
+  line-height: 1.6;
 }
 
-/* MAIN HEADINGS */
+/* MAIN HEADING */
 h1 {
   text-align: center;
-  font-size: 2.8rem;
+  font-size: 3rem;
   font-weight: 700;
-  color: #1e1e2f;
+  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 5px;
 }
 
 h3 {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 500;
-  color: #4b4b63;
+  color: #555770;
   margin-top: 0;
 }
 
-/* SECTION CARDS */
+/* SECTION CARDS WITH GLASSMORPHISM */
 .section {
   max-width: 1000px;
   margin: 30px auto;
-  padding: 25px;
-  border-radius: 12px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
 }
 
 /* SECTION TITLE */
 .section h2 {
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   font-weight: 600;
-  color: #1e1e2f;
   margin-bottom: 20px;
+  color: #1e1e2f;
 }
 
 /* FOLDER LABELS */
 .folder-label {
   display: inline-block;
   font-weight: 500;
-  background-color: #eef0f5;
-  color: #1e1e2f;
+  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
+  color: #fff;
   margin: 6px 0;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 12px 18px;
+  border-radius: 12px;
   cursor: pointer;
-  transition: background-color 0.25s ease, transform 0.25s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .folder-label:hover {
-  background-color: #dce0eb;
-  transform: translateX(3px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
 }
 
 /* NESTED MODULES */
 .nested {
   display: none;
   margin-left: 25px;
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 .module {
-  margin: 8px 0;
-  padding: 10px 14px;
-  background-color: #f9f9fb;
-  border-left: 3px solid #4b4b63;
-  border-radius: 8px;
+  margin: 10px 0;
+  padding: 12px 16px;
+  background: rgba(245,246,250,0.85);
+  border-left: 4px solid #6a5af9;
+  border-radius: 10px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-family: 'Roboto Mono', monospace;
 }
 
 .module:hover {
-  background-color: #f1f2f6;
-  transform: translateX(3px);
+  transform: translateX(4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 
 .module a {
@@ -104,10 +109,12 @@ h3 {
 }
 
 .module a:hover {
-  color: #4b4b63;
+  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* COMING SOON */
+/* COMING SOON LABEL */
 .coming-soon {
   margin-left: 25px;
   font-style: italic;
@@ -117,9 +124,14 @@ h3 {
 /* FOOTER */
 h5, h6 {
   text-align: center;
-  margin-top: 40px;
-  color: #4b4b63;
+  margin-top: 50px;
+  color: #555770;
   font-weight: 400;
+}
+
+/* SMOOTH ANIMATIONS */
+* {
+  transition: all 0.25s ease-in-out;
 }
 </style>
   <script>
