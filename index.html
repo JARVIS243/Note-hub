@@ -6,198 +6,196 @@
   <title>CAS MVK FYUGP Notes Hub</title>
   <style>
     /* =======================
-   MODERN CLEAN PREMIUM CSS
+   PREMIUM FUTURISTIC CSS
    ======================= */
 
-/* GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* GOOGLE FONTS IMPORT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
 
-/* =======================
-   GLOBAL SETTINGS
-   ======================= */
+/* =====================
+   GLOBAL RESET
+   ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.4s ease;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f7f8fa;
+  background: linear-gradient(135deg, #f0f0f5, #e0e0eb);
   color: #1e1e2f;
-  line-height: 1.7;
+  line-height: 1.6;
   min-height: 100vh;
-  padding: 40px 20px;
+  padding: 30px;
 }
 
-/* =======================
+/* =====================
    HEADINGS
-   ======================= */
-h1, h2, h3 {
-  margin-bottom: 20px;
+   ===================== */
+h1, h2, h3, h4 {
   font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 h1 {
   font-size: 3rem;
-  color: #2c3e50;
   text-align: center;
+  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 15px;
 }
 
 h2 {
   font-size: 2rem;
-  color: #34495e;
-  border-bottom: 2px solid #ecf0f1;
-  padding-bottom: 8px;
+  color: #1e1e2f;
+  margin-bottom: 25px;
 }
 
 h3 {
   font-size: 1.4rem;
-  color: #4b4b60;
-  text-align: center;
+  font-weight: 500;
+  color: #555770;
+  margin-bottom: 15px;
 }
 
-/* =======================
-   SECTIONS / CARDS
-   ======================= */
+/* =====================
+   SECTIONS
+   ===================== */
 .section {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 30px 25px;
-  margin: 25px auto;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 25px;
+  padding: 35px;
+  margin: 30px auto;
   max-width: 1000px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
 .section:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
 }
 
-/* =======================
-   FOLDER / BUTTON LABELS
-   ======================= */
-.folder-label {
+/* =====================
+   BUTTONS & FOLDERS
+   ===================== */
+.folder-label,
+.btn {
   display: inline-block;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1rem;
-  background-color: #ecf0f1;
-  color: #2c3e50;
-  padding: 12px 20px;
-  border-radius: 12px;
+  border-radius: 18px;
+  padding: 14px 28px;
   cursor: pointer;
-  margin: 8px 5px;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  margin: 8px 6px;
+  border: none;
 }
 
-.folder-label:hover {
-  background-color: #d1d8e0;
-  transform: translateY(-3px);
+.folder-label:hover,
+.btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+  background: linear-gradient(135deg, #2dd4bf, #6a5af9);
 }
 
-/* =======================
-   NESTED MODULES
-   ======================= */
-.nested {
-  display: none;
-  margin-left: 30px;
-  margin-top: 15px;
+.folder-label:active,
+.btn:active {
+  transform: translateY(1px) scale(0.97);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
 }
 
+.folder-label:focus,
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
+}
+
+/* =====================
+   MODULES
+   ===================== */
 .module {
-  background-color: #f5f6fa;
-  border-left: 3px solid #3498db;
-  border-radius: 12px;
-  padding: 15px 20px;
-  margin: 12px 0;
+  background: rgba(245,246,250,0.9);
+  border-left: 5px solid #6a5af9;
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin: 14px 0;
+  font-family: 'Roboto Mono', monospace;
   font-weight: 500;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+  transition: all 0.3s ease;
 }
 
 .module:hover {
-  transform: translateX(5px);
-  border-color: #2980b9;
+  transform: translateX(8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+  border-left-color: #2dd4bf;
 }
 
 .module a {
-  color: #2c3e50;
+  color: #1e1e2f;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .module a:hover {
-  text-decoration: underline;
-  color: #2980b9;
+  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* =======================
+/* =====================
+   NESTED MODULES
+   ===================== */
+.nested {
+  display: none;
+  margin-left: 35px;
+  margin-top: 18px;
+}
+
+/* =====================
    COMING SOON LABEL
-   ======================= */
+   ===================== */
 .coming-soon {
-  margin-left: 20px;
+  margin-left: 30px;
   font-style: italic;
-  color: #7f8c8d;
+  color: #a1a1b5;
+  font-weight: 400;
 }
 
-/* =======================
+/* =====================
    FOOTERS / SMALL TEXT
-   ======================= */
+   ===================== */
 h5, h6 {
   text-align: center;
-  color: #95a5a6;
+  color: #555770;
   font-weight: 400;
   margin-top: 50px;
 }
 
-/* =======================
-   UPDATED BUTTONS
-   ======================= */
-.btn {
-  display: inline-block;
-  padding: 14px 28px;
-  border-radius: 14px;
-  font-weight: 600;
-  font-size: 1rem;
-  background: linear-gradient(135deg, #3498db, #5dade2);
-  color: #ffffff;
-  text-decoration: none;
-  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  border: none;
-}
-
-.btn:hover {
-  background: linear-gradient(135deg, #5dade2, #2e86c1);
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(46, 134, 193, 0.35);
-}
-
-.btn:active {
-  transform: translateY(1px) scale(0.98);
-  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.25);
-}
-
-.btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
-}
-
-/* =======================
+/* =====================
    SCROLLBAR
-   ======================= */
+   ===================== */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #ecf0f1;
-  border-radius: 10px;
+  background: rgba(0,0,0,0.03);
+  border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bdc3c7;
-  border-radius: 10px;
+  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
+  border-radius: 12px;
 }
   </style>
   <script>
