@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CAS MVK FYUGP Notes Hub</title>
   <style>
-/* =======================
-   PREMIUM FUTURISTIC CSS
+    /* =======================
+   MODERN CLEAN PREMIUM CSS
    ======================= */
 
-/* GOOGLE FONTS IMPORT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* =======================
    GLOBAL SETTINGS
@@ -19,75 +19,59 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.35s ease-in-out;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
-  color: #e0e0e0;
+  background-color: #f7f8fa;
+  color: #1e1e2f;
   line-height: 1.7;
   min-height: 100vh;
   padding: 40px 20px;
-  background-attachment: fixed;
-  overflow-x: hidden;
 }
 
 /* =======================
    HEADINGS
    ======================= */
-h1, h2, h3, h4 {
+h1, h2, h3 {
+  margin-bottom: 20px;
   font-weight: 700;
-  letter-spacing: 0.7px;
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 3rem;
+  color: #2c3e50;
   text-align: center;
-  background: linear-gradient(90deg, #00f5a0, #00d4ff, #ff00bf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
-  animation: neonGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes neonGlow {
-  0% { text-shadow: 0 0 5px #00f5a0, 0 0 10px #00d4ff, 0 0 15px #ff00bf; }
-  100% { text-shadow: 0 0 20px #00f5a0, 0 0 30px #00d4ff, 0 0 40px #ff00bf; }
 }
 
 h2 {
   font-size: 2rem;
-  color: #f0f0f5;
-  margin-bottom: 25px;
-  border-bottom: 2px solid #00d4ff;
-  padding-bottom: 6px;
+  color: #34495e;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 8px;
 }
 
 h3 {
   font-size: 1.4rem;
-  font-weight: 500;
-  color: #c0c0d0;
-  margin-bottom: 18px;
+  color: #4b4b60;
 }
 
 /* =======================
-   SECTIONS & CARDS
+   SECTIONS / CARDS
    ======================= */
 .section {
-  background: rgba(20, 30, 50, 0.85);
-  backdrop-filter: blur(20px);
-  border-radius: 24px;
-  padding: 35px 30px;
-  margin: 30px auto;
-  max-width: 1100px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 30px 25px;
+  margin: 25px auto;
+  max-width: 1000px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .section:hover {
-  transform: translateY(-12px);
-  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
 }
 
 /* =======================
@@ -95,23 +79,20 @@ h3 {
    ======================= */
 .folder-label {
   display: inline-block;
-  font-weight: 600;
-  font-size: 1.05rem;
-  background: linear-gradient(135deg, #00f5a0, #00d4ff, #ff00bf);
-  color: #111;
-  padding: 14px 22px;
-  border-radius: 20px;
+  font-weight: 500;
+  font-size: 1rem;
+  background-color: #ecf0f1;
+  color: #2c3e50;
+  padding: 12px 20px;
+  border-radius: 12px;
   cursor: pointer;
-  margin: 10px 6px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
-  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+  margin: 8px 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .folder-label:hover {
-  transform: translateY(-5px) scale(1.06);
-  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
-  filter: drop-shadow(0 0 12px rgba(255,255,255,0.5));
+  background-color: #d1d8e0;
+  transform: translateY(-3px);
 }
 
 /* =======================
@@ -119,57 +100,42 @@ h3 {
    ======================= */
 .nested {
   display: none;
-  margin-left: 35px;
-  margin-top: 20px;
+  margin-left: 30px;
+  margin-top: 15px;
 }
 
 .module {
-  background: rgba(40, 50, 70, 0.9);
-  border-left: 4px solid #00f5a0;
-  border-radius: 16px;
-  padding: 16px 22px;
-  margin: 14px 0;
-  font-family: 'Roboto Mono', monospace;
+  background-color: #f5f6fa;
+  border-left: 3px solid #3498db;
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin: 12px 0;
   font-weight: 500;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, border-left-color 0.35s ease, background 0.35s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .module:hover {
-  transform: translateX(8px);
-  box-shadow: 0 18px 30px rgba(0,0,0,0.3);
-  border-left-color: #ff00bf;
-  background: rgba(60, 80, 110, 0.95);
+  transform: translateX(5px);
+  border-color: #2980b9;
 }
 
 .module a {
-  color: #f0f0f5;
+  color: #2c3e50;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .module a:hover {
-  background: linear-gradient(90deg, #00f5a0, #00d4ff, #ff00bf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 5px rgba(255,255,255,0.4);
+  text-decoration: underline;
+  color: #2980b9;
 }
 
 /* =======================
    COMING SOON LABEL
    ======================= */
 .coming-soon {
-  margin-left: 30px;
+  margin-left: 20px;
   font-style: italic;
-  color: #8a8abf;
-  font-weight: 400;
-  animation: pulseText 2s infinite;
-}
-
-@keyframes pulseText {
-  0% { opacity: 0.6; }
-  50% { opacity: 1; }
-  100% { opacity: 0.6; }
+  color: #7f8c8d;
 }
 
 /* =======================
@@ -177,71 +143,45 @@ h3 {
    ======================= */
 h5, h6 {
   text-align: center;
-  color: #9999b0;
+  color: #95a5a6;
   font-weight: 400;
-  margin-top: 60px;
+  margin-top: 50px;
 }
 
 /* =======================
-   INTERACTIVE EFFECTS
+   BUTTONS
    ======================= */
-* {
-  scroll-behavior: smooth;
-}
-
-/* GRADIENT BUTTON */
-.btn-gradient {
+.btn {
   display: inline-block;
-  padding: 14px 28px;
-  font-weight: 600;
-  border-radius: 20px;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 500;
+  background-color: #3498db;
+  color: #fff;
   text-decoration: none;
-  color: #111;
-  background: linear-gradient(135deg, #00f5a0, #00d4ff, #ff00bf);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.btn-gradient:hover {
-  transform: translateY(-4px) scale(1.08);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
-  filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
+.btn:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
 }
 
-/* CUSTOM SCROLLBAR */
+/* =======================
+   SCROLLBAR
+   ======================= */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.1);
-  border-radius: 12px;
+  background: #ecf0f1;
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #00f5a0, #00d4ff, #ff00bf);
-  border-radius: 12px;
-}
-
-/* =======================
-   ADDITIONAL FUTURISTIC EFFECTS
-   ======================= */
-body::before {
-  content: "";
-  position: fixed;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%);
-  animation: rotateBg 60s linear infinite;
-  pointer-events: none;
-  z-index: -1;
-}
-
-@keyframes rotateBg {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  background: #bdc3c7;
+  border-radius: 10px;
 }
   </style>
   <script>
