@@ -5,159 +5,125 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CAS MVK FYUGP Notes Hub</title>
   <style>
-  /* Base Styles */
+  /* GOOGLE FONT IMPORT */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+  /* BASE STYLES */
   body {
-    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #ece9e6, #ffffff);
-    color: #2c3e50;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
     padding: 20px;
-    line-height: 1.7;
-    transition: background 0.3s ease;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    color: #1f2937;
   }
 
   h1 {
     text-align: center;
-    color: #1e3c72;
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-    animation: fadeSlideDown 1s ease forwards;
+    font-size: 2.8rem;
+    color: #1d4ed8;
+    margin-bottom: 0.2rem;
   }
 
   h3 {
     text-align: center;
-    color: #2a5298;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    color: #2563eb;
     margin-top: 0;
-    animation: fadeIn 2s ease forwards;
+    font-weight: 500;
   }
 
-  /* Section Card */
+  /* SECTION CARD STYLING */
   .section {
-    margin: 30px auto;
-    max-width: 980px;
-    background: rgba(255, 255, 255, 0.85);
+    max-width: 1000px;
+    margin: 40px auto;
     padding: 25px;
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.08);
     backdrop-filter: blur(10px);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
 
   .section:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
   }
 
   .section h2 {
-    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    font-size: 1.6rem;
+    background: linear-gradient(90deg, #3b82f6, #1e40af);
     color: #fff;
-    padding: 14px 16px;
+    padding: 12px 18px;
     border-radius: 10px;
-    font-size: 1.5rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     cursor: default;
-    animation: slideInLeft 1s ease forwards;
   }
 
-  /* Folder Labels */
+  /* FOLDER LABELS */
   .folder-label {
     display: inline-block;
-    margin: 10px 0 6px 0;
-    padding: 10px 16px;
-    background: #d1ecf1;
-    color: #0c5460;
     font-weight: 600;
-    border-radius: 8px;
+    background: #eff6ff;
+    color: #1e3a8a;
+    margin: 6px 0;
+    padding: 10px 14px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: 0.3s;
   }
 
   .folder-label:hover {
-    background: #bee5eb;
-    transform: translateX(6px);
+    background: #dbeafe;
+    transform: translateX(5px);
   }
 
-  /* Nested Modules */
+  /* NESTED MODULES */
   .nested {
     display: none;
-    margin-left: 30px;
+    margin-left: 25px;
+    margin-top: 6px;
   }
 
   .module {
     margin: 6px 0;
-    padding: 8px 14px;
-    background: #e8f5e9;
+    padding: 8px 12px;
+    background: #f9fafb;
+    border-left: 3px solid #3b82f6;
     border-radius: 8px;
-    transition: all 0.25s ease;
+    transition: background 0.3s, transform 0.2s;
   }
 
   .module:hover {
-    background: #c8e6c9;
-    transform: translateX(4px);
+    background: #e0f2fe;
+    transform: translateX(3px);
   }
 
   .module a {
     text-decoration: none;
-    color: #1b5e20;
     font-weight: 500;
+    color: #1e40af;
+    transition: color 0.2s;
   }
 
   .module a:hover {
     text-decoration: underline;
-    color: #2e7d32;
+    color: #3b82f6;
   }
 
-  /* Coming Soon */
+  /* COMING SOON LABEL */
   .coming-soon {
     margin-left: 25px;
     font-style: italic;
-    color: #7f8c8d;
+    color: #6b7280;
   }
 
-  /* Headings fade animations */
+  /* FOOTER HEADINGS */
   h5, h6 {
     text-align: center;
-    margin-top: 40px;
-    color: #607d8b;
-    animation: fadeIn 2.5s ease forwards;
-  }
-
-  /* Animations */
-  @keyframes fadeSlideDown {
-    0% { transform: translateY(-40px); opacity: 0; }
-    100% { transform: translateY(0); opacity: 1; }
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  @keyframes slideInLeft {
-    from { transform: translateX(-40px); opacity: 0; }
-    to { transform: translateX(0); opacity: 1; }
-  }
-
-  /* Responsive tweaks */
-  @media (max-width: 768px) {
-    .section {
-      padding: 20px;
-      margin: 20px 10px;
-    }
-
-    h1 {
-      font-size: 2rem;
-    }
-
-    .section h2 {
-      font-size: 1.3rem;
-    }
-
-    .folder-label, .module {
-      padding: 8px 12px;
-      font-size: 0.95rem;
-    }
+    margin-top: 50px;
+    color: #475569;
+    font-weight: 400;
   }
 </style>
   <script>
