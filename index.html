@@ -150,22 +150,37 @@ h5, h6 {
 }
 
 /* =======================
-   BUTTONS
+   UPDATED BUTTONS
    ======================= */
 .btn {
   display: inline-block;
-  padding: 12px 25px;
-  border-radius: 12px;
-  font-weight: 500;
-  background-color: #3498db;
-  color: #fff;
+  padding: 14px 28px;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  color: #ffffff;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 6px 15px rgba(52, 152, 219, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
 }
 
 .btn:hover {
-  background-color: #2980b9;
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, #5dade2, #2e86c1);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(46, 134, 193, 0.35);
+}
+
+.btn:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.25);
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
 }
 
 /* =======================
@@ -197,6 +212,7 @@ h5, h6 {
         label.addEventListener('click', toggleDisplay);
       });
     };
+    
   </script>
 </head>
 <body>
