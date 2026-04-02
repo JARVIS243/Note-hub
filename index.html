@@ -12,157 +12,179 @@
 /* GOOGLE FONTS IMPORT */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
 
-/* =====================
+/* =======================
    GLOBAL SETTINGS
-   ===================== */
+   ======================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(145deg, #f0f0f5, #e0e0eb);
-  color: #1e1e2f;
-  line-height: 1.6;
+  background: linear-gradient(160deg, #0f2027, #203a43, #2c5364);
+  color: #e0e0e0;
+  line-height: 1.7;
   min-height: 100vh;
-  padding: 30px;
+  padding: 40px 20px;
+  background-attachment: fixed;
+  overflow-x: hidden;
 }
 
-/* =====================
+/* =======================
    HEADINGS
-   ===================== */
+   ======================= */
 h1, h2, h3, h4 {
   font-weight: 700;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.7px;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
   text-align: center;
-  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
+  background: linear-gradient(90deg, #00f5a0, #00d4ff, #ff00bf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+  animation: neonGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neonGlow {
+  0% { text-shadow: 0 0 5px #00f5a0, 0 0 10px #00d4ff, 0 0 15px #ff00bf; }
+  100% { text-shadow: 0 0 20px #00f5a0, 0 0 30px #00d4ff, 0 0 40px #ff00bf; }
 }
 
 h2 {
   font-size: 2rem;
-  color: #1e1e2f;
-  margin-bottom: 20px;
+  color: #f0f0f5;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #00d4ff;
+  padding-bottom: 6px;
 }
 
 h3 {
   font-size: 1.4rem;
   font-weight: 500;
-  color: #555770;
-  margin-bottom: 15px;
+  color: #c0c0d0;
+  margin-bottom: 18px;
 }
 
-/* =====================
+/* =======================
    SECTIONS & CARDS
-   ===================== */
+   ======================= */
 .section {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(15px);
-  border-radius: 20px;
-  padding: 30px;
-  margin: 25px auto;
-  max-width: 1000px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  background: rgba(20, 30, 50, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 35px 30px;
+  margin: 30px auto;
+  max-width: 1100px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .section:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+  transform: translateY(-12px);
+  box-shadow: 0 35px 80px rgba(0,0,0,0.35);
 }
 
-/* =====================
+/* =======================
    FOLDER / BUTTON LABELS
-   ===================== */
+   ======================= */
 .folder-label {
   display: inline-block;
   font-weight: 600;
-  font-size: 1rem;
-  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
-  color: #fff;
-  padding: 12px 20px;
-  border-radius: 16px;
+  font-size: 1.05rem;
+  background: linear-gradient(135deg, #00f5a0, #00d4ff, #ff00bf);
+  color: #111;
+  padding: 14px 22px;
+  border-radius: 20px;
   cursor: pointer;
-  margin: 8px 6px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 10px 6px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
 }
 
 .folder-label:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  transform: translateY(-5px) scale(1.06);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.5));
 }
 
-/* =====================
+/* =======================
    NESTED MODULES
-   ===================== */
+   ======================= */
 .nested {
   display: none;
-  margin-left: 30px;
-  margin-top: 15px;
+  margin-left: 35px;
+  margin-top: 20px;
 }
 
 .module {
-  background: rgba(245,246,250,0.85);
-  border-left: 4px solid #6a5af9;
-  border-radius: 14px;
-  padding: 14px 18px;
-  margin: 12px 0;
+  background: rgba(40, 50, 70, 0.9);
+  border-left: 4px solid #00f5a0;
+  border-radius: 16px;
+  padding: 16px 22px;
+  margin: 14px 0;
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-color 0.3s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-left-color 0.35s ease, background 0.35s ease;
 }
 
 .module:hover {
-  transform: translateX(6px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.12);
-  border-left-color: #2dd4bf;
+  transform: translateX(8px);
+  box-shadow: 0 18px 30px rgba(0,0,0,0.3);
+  border-left-color: #ff00bf;
+  background: rgba(60, 80, 110, 0.95);
 }
 
 .module a {
-  color: #1e1e2f;
+  color: #f0f0f5;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .module a:hover {
-  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
+  background: linear-gradient(90deg, #00f5a0, #00d4ff, #ff00bf);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 5px rgba(255,255,255,0.4);
 }
 
-/* =====================
+/* =======================
    COMING SOON LABEL
-   ===================== */
+   ======================= */
 .coming-soon {
   margin-left: 30px;
   font-style: italic;
-  color: #a1a1b5;
+  color: #8a8abf;
   font-weight: 400;
+  animation: pulseText 2s infinite;
 }
 
-/* =====================
+@keyframes pulseText {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+/* =======================
    FOOTERS / SMALL TEXT
-   ===================== */
+   ======================= */
 h5, h6 {
   text-align: center;
-  color: #555770;
+  color: #9999b0;
   font-weight: 400;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
-/* =====================
+/* =======================
    INTERACTIVE EFFECTS
-   ===================== */
+   ======================= */
 * {
   scroll-behavior: smooth;
 }
@@ -170,36 +192,57 @@ h5, h6 {
 /* GRADIENT BUTTON */
 .btn-gradient {
   display: inline-block;
-  padding: 12px 25px;
+  padding: 14px 28px;
   font-weight: 600;
-  border-radius: 16px;
+  border-radius: 20px;
   text-decoration: none;
-  color: #fff;
-  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #111;
+  background: linear-gradient(135deg, #00f5a0, #00d4ff, #ff00bf);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
 }
 
 .btn-gradient:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+  filter: drop-shadow(0 0 15px rgba(255,255,255,0.4));
 }
 
 /* CUSTOM SCROLLBAR */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.03);
-  border-radius: 10px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
-  border-radius: 10px;
+  background: linear-gradient(135deg, #00f5a0, #00d4ff, #ff00bf);
+  border-radius: 12px;
 }
-    
+
+/* =======================
+   ADDITIONAL FUTURISTIC EFFECTS
+   ======================= */
+body::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.03) 0%, transparent 70%);
+  animation: rotateBg 60s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes rotateBg {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
   </style>
   <script>
     function toggleDisplay(event) {
