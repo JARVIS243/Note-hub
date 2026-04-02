@@ -5,198 +5,121 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CAS MVK FYUGP Notes Hub</title>
   <style>
-    /* =======================
-   PREMIUM FUTURISTIC CSS
-   ======================= */
-
-/* GOOGLE FONTS IMPORT */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap');
-
-/* =====================
-   GLOBAL RESET
-   ===================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  transition: all 0.4s ease;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Inter', sans-serif;
-  background: linear-gradient(135deg, #f0f0f5, #e0e0eb);
-  color: #1e1e2f;
-  line-height: 1.6;
-  min-height: 100vh;
-  padding: 30px;
-}
-
-/* =====================
-   HEADINGS
-   ===================== */
-h1, h2, h3, h4 {
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-h1 {
-  font-size: 3rem;
-  text-align: center;
-  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
-}
-
-h2 {
-  font-size: 2rem;
-  color: #1e1e2f;
-  margin-bottom: 25px;
-}
-
-h3 {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: #555770;
-  margin-bottom: 15px;
-}
-
-/* =====================
-   SECTIONS
-   ===================== */
-.section {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(20px);
-  border-radius: 25px;
-  padding: 35px;
-  margin: 30px auto;
-  max-width: 1000px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
-}
-
-.section:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 70px rgba(0,0,0,0.12);
-}
-
-/* =====================
-   BUTTONS & FOLDERS
-   ===================== */
-.folder-label,
-.btn {
-  display: inline-block;
-  font-weight: 600;
-  font-size: 1rem;
-  border-radius: 18px;
-  padding: 14px 28px;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-  transition: all 0.3s ease;
-  margin: 8px 6px;
-  border: none;
-}
-
-.folder-label:hover,
-.btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
-  background: linear-gradient(135deg, #2dd4bf, #6a5af9);
-}
-
-.folder-label:active,
-.btn:active {
-  transform: translateY(1px) scale(0.97);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-}
-
-.folder-label:focus,
-.btn:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.3);
-}
-
-/* =====================
-   MODULES
-   ===================== */
-.module {
-  background: rgba(245,246,250,0.9);
-  border-left: 5px solid #6a5af9;
-  border-radius: 16px;
-  padding: 16px 20px;
-  margin: 14px 0;
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 500;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-  transition: all 0.3s ease;
-}
-
-.module:hover {
-  transform: translateX(8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.12);
-  border-left-color: #2dd4bf;
-}
-
-.module a {
-  color: #1e1e2f;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.module a:hover {
-  background: linear-gradient(90deg, #6a5af9, #2dd4bf);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* =====================
-   NESTED MODULES
-   ===================== */
-.nested {
-  display: none;
-  margin-left: 35px;
-  margin-top: 18px;
-}
-
-/* =====================
-   COMING SOON LABEL
-   ===================== */
-.coming-soon {
-  margin-left: 30px;
-  font-style: italic;
-  color: #a1a1b5;
-  font-weight: 400;
-}
-
-/* =====================
-   FOOTERS / SMALL TEXT
-   ===================== */
-h5, h6 {
-  text-align: center;
-  color: #555770;
-  font-weight: 400;
-  margin-top: 50px;
-}
-
-/* =====================
-   SCROLLBAR
-   ===================== */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.03);
-  border-radius: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #6a5af9, #2dd4bf);
-  border-radius: 12px;
-}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #f4f6f8, #e3eaf2);
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1 {
+      text-align: center;
+      color: #1a237e;
+      margin-bottom: 5px;
+      animation: slideInDown 1s ease-in-out;
+    }
+    h3 {
+      text-align: center;
+      color: #3949ab;
+      margin-top: 0;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes slideInDown {
+      from {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .section {
+      margin: 30px auto;
+      max-width: 950px;
+      background: white;
+      padding: 25px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    .section:hover {
+      transform: scale(1.005);
+    }
+    .section h2 {
+      background: linear-gradient(to right, #007bff, #0056b3);
+      color: white;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      animation: slideInLeft 1s ease-in-out;
+    }
+    @keyframes slideInLeft {
+      from {
+        transform: translateX(-50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+    .folder-label {
+      margin-left: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 8px 12px;
+      background: #e3f2fd;
+      border-radius: 6px;
+      margin-top: 6px;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .folder-label:hover {
+      background: #bbdefb;
+      transform: translateX(5px);
+    }
+    .nested {
+      display: none;
+      margin-left: 25px;
+    }
+    .module {
+      margin-left: 20px;
+      background-color: #f1f8e9;
+      margin-top: 4px;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background 0.2s;
+    }
+    .module:hover {
+      background-color: #dcedc8;
+    }
+    .module a {
+      text-decoration: none;
+      color: #2e7d32;
+      font-weight: 500;
+    }
+    .module a:hover {
+      text-decoration: underline;
+    }
+    .coming-soon {
+      margin-left: 25px;
+      font-style: italic;
+      color: #999;
+    }
+    h5, h6 {
+      text-align: center;
+      margin-top: 40px;
+      color: #607d8b;
+      animation: fadeIn 3s ease-in-out;
+    }
   </style>
   <script>
     function toggleDisplay(event) {
