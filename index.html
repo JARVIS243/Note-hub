@@ -659,60 +659,7 @@ h6 {
       document.querySelectorAll('.folder-label').forEach(label => {
         label.addEventListener('click', toggleDisplay);
       });
-    };
-
-    (function () {
-    const clock = document.createElement("div");
-
-    clock.id = "digitalClock";
-
-    clock.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 25px;
-        z-index: 9999;
-        padding: 12px 20px;
-        border-radius: 14px;
-        background: linear-gradient(135deg, #4f46e5, #06b6d4);
-        color: white;
-        font-family: 'Segoe UI', sans-serif;
-        font-size: 17px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        box-shadow: 0 6px 20px rgba(79,70,229,.25);
-        backdrop-filter: blur(10px);
-    `;
-
-    document.body.appendChild(clock);
-
-    function updateClock() {
-        const now = new Date();
-
-        const time = now.toLocaleTimeString('en-IN', {
-            timeZone: 'Asia/Kolkata',
-            hour: '2-digit',
-            minute: '2-digit',
-            second: '2-digit',
-            hour12: true
-        });
-
-        const date = now.toLocaleDateString('en-IN', {
-            timeZone: 'Asia/Kolkata',
-            day: '2-digit',
-            month: 'short',
-            year: 'numeric'
-        });
-
-        clock.innerHTML = `🕒 ${time}<br>
-        <span style="font-size:12px;font-weight:500;">
-            ${date} | IST
-        </span>`;
-    }
-
-    updateClock();
-    setInterval(updateClock, 1000);
-})();
-    
+    };  
   </script>
   <!-- Favicon -->
 <link rel="icon" href="logo.png" type="image/png">
@@ -1145,6 +1092,97 @@ h6 {
 
 <h5> WEBSITE PREPARED BY AJU KRISHNA </h5>
 <h6> copyright © 2026 </h6>
+<script>
+(function () {
 
+    function createClock() {
+
+        // Prevent duplicate clocks
+        if (document.getElementById("digitalClock")) return;
+
+        const clock = document.createElement("div");
+        clock.id = "digitalClock";
+
+        clock.style.cssText = `
+            position: fixed !important;
+            top: 20px !important;
+            right: 25px !important;
+            left: auto !important;
+            z-index: 999999 !important;
+
+            display: block !important;
+            visibility: visible !important;
+            opacity: 1 !important;
+
+            padding: 12px 22px;
+            border-radius: 15px;
+
+            background: linear-gradient(
+                135deg,
+                #6366f1,
+                #9333ea,
+                #06b6d4
+            );
+
+            color: #ffffff !important;
+            font-family: 'Segoe UI', sans-serif;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            letter-spacing: 1px;
+
+            box-shadow: 0 8px 25px rgba(99,102,241,.35);
+            border: 1px solid rgba(255,255,255,.2);
+
+            min-width: 175px;
+            pointer-events: none;
+        `;
+
+        document.body.appendChild(clock);
+
+        function updateClock() {
+
+            const now = new Date();
+
+            const time = now.toLocaleTimeString("en-IN", {
+                timeZone: "Asia/Kolkata",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit",
+                hour12: true
+            });
+
+            const date = now.toLocaleDateString("en-IN", {
+                timeZone: "Asia/Kolkata",
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            });
+
+            clock.innerHTML = `
+                🕒 ${time}
+                <div style="
+                    font-size:12px;
+                    font-weight:500;
+                    margin-top:3px;
+                    letter-spacing:.5px;
+                ">
+                    ${date} | IST
+                </div>
+            `;
+        }
+
+        updateClock();
+        setInterval(updateClock, 1000);
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", createClock);
+    } else {
+        createClock();
+    }
+
+})();
+</script>
 </body>
 </html>
