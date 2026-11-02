@@ -660,6 +660,58 @@ h6 {
         label.addEventListener('click', toggleDisplay);
       });
     };
+
+    (function () {
+    const clock = document.createElement("div");
+
+    clock.id = "digitalClock";
+
+    clock.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 25px;
+        z-index: 9999;
+        padding: 12px 20px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, #4f46e5, #06b6d4);
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        box-shadow: 0 6px 20px rgba(79,70,229,.25);
+        backdrop-filter: blur(10px);
+    `;
+
+    document.body.appendChild(clock);
+
+    function updateClock() {
+        const now = new Date();
+
+        const time = now.toLocaleTimeString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            hour12: true
+        });
+
+        const date = now.toLocaleDateString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+
+        clock.innerHTML = `🕒 ${time}<br>
+        <span style="font-size:12px;font-weight:500;">
+            ${date} | IST
+        </span>`;
+    }
+
+    updateClock();
+    setInterval(updateClock, 1000);
+})();
     
   </script>
   <!-- Favicon -->
